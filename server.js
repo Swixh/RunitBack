@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
 const cards = [
     {
@@ -134,6 +134,6 @@ app.get('/api', (req, res) => {
     res.json(cardObj)
 })
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })
